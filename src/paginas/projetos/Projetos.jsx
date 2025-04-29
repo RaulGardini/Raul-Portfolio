@@ -1,13 +1,13 @@
 import React from "react";
 import Footer from "../../componentes/Footer";
 
-function Linguagens() {
+function Projetos() {
     return(
         <>
         <Footer/>
-        <h1>ola</h1>
+        <h1>olaa</h1>
         </>
     )
 }
 
-export default Linguagens;
+export default Projetos;
