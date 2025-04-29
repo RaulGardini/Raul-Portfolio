@@ -6,6 +6,7 @@ Footer{
     background-color: #0E0E0E;
     height: 50px;
     align-items: center;
+    position: static;
 }
 
 footer a {
