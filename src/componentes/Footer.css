@@ -1,0 +1,40 @@
+Footer{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #0E0E0E;
+    height: 50px;
+    align-items: center;
+}
+
+footer a {
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    color: #00FF00;
+    font-weight: 700;
+    display: inline-block;
+    transition: color 0.1s, transform 0.1s;
+    padding: 5px;
+}
+
+footer a:hover {
+    color: #58ff61;
+    transform: scale(1.2);
+}
+
+.links{
+    margin-left: 100px;
+    display: flex;
+    align-items: center;
+}
+
+.links a {
+    margin: 0 40px 0 0;
+}
+
+.github{
+    scale: 300%;
+    margin-top: 10px;
+    margin-right: 100px;
+}
