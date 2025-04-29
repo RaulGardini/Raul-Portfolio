@@ -1,5 +1,34 @@
-main{
+main {
     background-color: black;
     height: 100vh;
     color: white;
+    position: relative;
+}
+
+.resumo {
+    width: 60%;
+    height: 50%;
+    margin: 7% auto 0 auto; /* topo 5%, centralizado horizontalmente */
+    background-color: #0E0E0E;
+    border-radius: 50px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.imagem{
+    width: 50%;
+}
+
+img{
+    width: 80%;
+    margin: 10% 0 0 5%;
+}
+
+.texto{
+    font-family: Arial, Helvetica, sans-serif;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
 }
