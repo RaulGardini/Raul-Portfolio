@@ -1,0 +1,32 @@
+.linguagens {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #00FF00;
+
+    width: 80%;               /* largura proporcional */
+    height: 80%;              /* altura proporcional à tela */
+    margin-top: 1%;          /* espaço proporcional acima */
+    margin-left: 7%;         /* empurra para o canto direito */
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around; /* espaçamento vertical uniforme */
+}
+
+.displayflex{
+    display: flex;
+    justify-content: space-between;
+}
+
+h4{
+    display: flex;  /* Centraliza horizontalmente */
+  align-items: center;       /* Centraliza verticalmente */
+}
+
+.textos{
+    padding: 5px;
+    color: black;
+    background-color: rgb(230, 230, 230);
+    width: 80%;
+    border-radius: 10px;
+    border: 8px solid rgb(155, 155, 155);
+}
