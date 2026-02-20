@@ -38,13 +38,13 @@ const Header = () => {
   };
 
   return (
-    <header className="sticky top-0 z-50 bg-black text-white shadow-lg">
+    <header className="sticky top-0 z-50 bg-[#F5EDE8]/95 backdrop-blur-sm text-[#3D2826] shadow-sm border-b border-[#987D7C]/20">
       <nav className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           {/* Logo/Name */}
           <button
             onClick={() => scrollToSection('home')}
-            className="text-xl font-bold hover:text-blue-500 transition-colors duration-300"
+            className="text-xl font-bold hover:text-[#987D7C] transition-colors duration-300"
           >
             Raul Passos Gardini
           </button>
@@ -55,15 +55,15 @@ const Header = () => {
               <button
                 key={link.id}
                 onClick={() => scrollToSection(link.id)}
-                className={`relative text-sm font-medium transition-colors duration-300 hover:text-blue-500 ${
-                  activeSection === link.id ? 'text-blue-500' : 'text-white'
+                className={`relative text-sm font-medium transition-colors duration-300 hover:text-[#987D7C] ${
+                  activeSection === link.id ? 'text-[#987D7C]' : 'text-[#3D2826]'
                 }`}
               >
                 {link.label}
                 {activeSection === link.id && (
                   <motion.div
                     layoutId="activeIndicator"
-                    className="absolute -bottom-1 left-0 right-0 h-0.5 bg-blue-500"
+                    className="absolute -bottom-1 left-0 right-0 h-0.5 bg-[#987D7C]"
                     initial={false}
                     transition={{ type: 'spring', stiffness: 500, damping: 30 }}
                   />
@@ -75,7 +75,7 @@ const Header = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden p-2 hover:bg-gray-900 rounded-lg transition-colors duration-300"
+            className="md:hidden p-2 hover:bg-[#E8D4CE] rounded-lg transition-colors duration-300"
             aria-label="Toggle menu"
           >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -97,10 +97,10 @@ const Header = () => {
                   <button
                     key={link.id}
                     onClick={() => scrollToSection(link.id)}
-                    className={`text-sm font-medium transition-colors duration-300 hover:text-blue-500 px-2 py-1 text-left ${
+                    className={`text-sm font-medium transition-colors duration-300 hover:text-[#987D7C] px-2 py-1 text-left ${
                       activeSection === link.id
-                        ? 'text-blue-500 bg-gray-900 rounded'
-                        : 'text-white'
+                        ? 'text-[#987D7C] bg-[#E8D4CE] rounded'
+                        : 'text-[#3D2826]'
                     }`}
                   >
                     {link.label}

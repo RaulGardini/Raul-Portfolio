@@ -19,19 +19,19 @@ const ContatoPage = () => {
       icon: Github,
       href: 'https://github.com/raulpassosgardini',
       label: 'GitHub',
-      color: 'hover:text-gray-400'
+      color: 'hover:text-[#7A6160]'
     },
     {
       icon: Linkedin,
       href: 'https://linkedin.com/in/raulpassosgardini',
       label: 'LinkedIn',
-      color: 'hover:text-blue-400'
+      color: 'hover:text-[#987D7C]'
     },
     {
       icon: Twitter,
       href: 'https://twitter.com/raulpassosgardini',
       label: 'Twitter',
-      color: 'hover:text-sky-400'
+      color: 'hover:text-[#B09B9A]'
     }
   ];
 
@@ -64,7 +64,6 @@ const ContatoPage = () => {
       ...prev,
       [name]: value
     }));
-    // Clear error when user starts typing
     if (errors[name]) {
       setErrors(prev => ({
         ...prev,
@@ -77,14 +76,12 @@ const ContatoPage = () => {
     e.preventDefault();
 
     if (validateForm()) {
-      // Simulate form submission
       toast({
         title: 'Mensagem Enviada! ✓',
         description: 'Obrigado pelo contato! Responderei em breve.',
         duration: 5000
       });
 
-      // Clear form
       setFormData({
         name: '',
         email: '',
@@ -107,7 +104,7 @@ const ContatoPage = () => {
         <meta name="description" content="Entre em contato com Raul Passos Gardini" />
       </Helmet>
 
-      <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 py-20">
+      <div className="min-h-screen bg-gradient-to-br from-[#F0E4DF] via-[#F5EDE8] to-[#F0E4DF] py-20">
         <div className="container mx-auto px-4">
           {/* Header */}
           <motion.div
@@ -116,10 +113,10 @@ const ContatoPage = () => {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h1 className="text-5xl md:text-6xl font-bold mb-4 text-white">
+            <h1 className="text-5xl md:text-6xl font-bold mb-4 text-[#3D2826]">
               Contato
             </h1>
-            <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+            <p className="text-xl text-[#7A6160] max-w-2xl mx-auto">
               Vamos conversar sobre seu próximo projeto
             </p>
           </motion.div>
@@ -131,13 +128,13 @@ const ContatoPage = () => {
               animate={{ x: 0, opacity: 1 }}
               transition={{ delay: 0.2, duration: 0.6 }}
             >
-              <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm border border-gray-700 rounded-xl p-8 shadow-xl">
-                <h2 className="text-2xl font-bold text-white mb-6">Envie uma Mensagem</h2>
-                
+              <div className="bg-white/60 backdrop-blur-sm border border-[#987D7C]/20 rounded-xl p-8 shadow-xl">
+                <h2 className="text-2xl font-bold text-[#3D2826] mb-6">Envie uma Mensagem</h2>
+
                 <form onSubmit={handleSubmit} className="space-y-6">
                   {/* Name Field */}
                   <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
+                    <label htmlFor="name" className="block text-sm font-medium text-[#6B4F4D] mb-2">
                       Nome
                     </label>
                     <input
@@ -146,9 +143,9 @@ const ContatoPage = () => {
                       name="name"
                       value={formData.name}
                       onChange={handleChange}
-                      className={`w-full px-4 py-3 bg-gray-900 border ${
-                        errors.name ? 'border-red-500' : 'border-gray-700'
-                      } rounded-lg text-white focus:outline-none focus:border-blue-500 transition-colors duration-300`}
+                      className={`w-full px-4 py-3 bg-white/70 border ${
+                        errors.name ? 'border-red-400' : 'border-[#C4AEAC]'
+                      } rounded-lg text-[#3D2826] focus:outline-none focus:border-[#987D7C] transition-colors duration-300`}
                       placeholder="Seu nome"
                     />
                     {errors.name && (
@@ -158,7 +155,7 @@ const ContatoPage = () => {
 
                   {/* Email Field */}
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
+                    <label htmlFor="email" className="block text-sm font-medium text-[#6B4F4D] mb-2">
                       Email
                     </label>
                     <input
@@ -167,9 +164,9 @@ const ContatoPage = () => {
                       name="email"
                       value={formData.email}
                       onChange={handleChange}
-                      className={`w-full px-4 py-3 bg-gray-900 border ${
-                        errors.email ? 'border-red-500' : 'border-gray-700'
-                      } rounded-lg text-white focus:outline-none focus:border-blue-500 transition-colors duration-300`}
+                      className={`w-full px-4 py-3 bg-white/70 border ${
+                        errors.email ? 'border-red-400' : 'border-[#C4AEAC]'
+                      } rounded-lg text-[#3D2826] focus:outline-none focus:border-[#987D7C] transition-colors duration-300`}
                       placeholder="seu@email.com"
                     />
                     {errors.email && (
@@ -179,7 +176,7 @@ const ContatoPage = () => {
 
                   {/* Message Field */}
                   <div>
-                    <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-2">
+                    <label htmlFor="message" className="block text-sm font-medium text-[#6B4F4D] mb-2">
                       Mensagem
                     </label>
                     <textarea
@@ -188,9 +185,9 @@ const ContatoPage = () => {
                       value={formData.message}
                       onChange={handleChange}
                       rows="5"
-                      className={`w-full px-4 py-3 bg-gray-900 border ${
-                        errors.message ? 'border-red-500' : 'border-gray-700'
-                      } rounded-lg text-white focus:outline-none focus:border-blue-500 transition-colors duration-300 resize-none`}
+                      className={`w-full px-4 py-3 bg-white/70 border ${
+                        errors.message ? 'border-red-400' : 'border-[#C4AEAC]'
+                      } rounded-lg text-[#3D2826] focus:outline-none focus:border-[#987D7C] transition-colors duration-300 resize-none`}
                       placeholder="Sua mensagem..."
                     />
                     {errors.message && (
@@ -201,7 +198,7 @@ const ContatoPage = () => {
                   {/* Submit Button */}
                   <Button
                     type="submit"
-                    className="w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 rounded-lg transition-all duration-300 transform hover:scale-105 flex items-center justify-center space-x-2"
+                    className="w-full bg-[#987D7C] hover:bg-[#7A6160] text-white font-semibold py-3 rounded-lg transition-all duration-300 transform hover:scale-105 flex items-center justify-center space-x-2"
                   >
                     <span>Enviar Mensagem</span>
                     <Send size={18} />
@@ -218,24 +215,24 @@ const ContatoPage = () => {
               className="space-y-8"
             >
               {/* Email Card */}
-              <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm border border-gray-700 rounded-xl p-8 shadow-xl">
+              <div className="bg-white/60 backdrop-blur-sm border border-[#987D7C]/20 rounded-xl p-8 shadow-xl">
                 <div className="flex items-center space-x-4 mb-4">
-                  <div className="w-12 h-12 bg-blue-500/20 rounded-lg flex items-center justify-center">
-                    <Mail size={24} className="text-blue-400" />
+                  <div className="w-12 h-12 bg-[#987D7C]/20 rounded-lg flex items-center justify-center">
+                    <Mail size={24} className="text-[#987D7C]" />
                   </div>
-                  <h3 className="text-xl font-bold text-white">Email</h3>
+                  <h3 className="text-xl font-bold text-[#3D2826]">Email</h3>
                 </div>
                 <a
                   href="mailto:raul@example.com"
-                  className="text-blue-400 hover:text-blue-300 transition-colors duration-300"
+                  className="text-[#987D7C] hover:text-[#7A6160] transition-colors duration-300"
                 >
                   raul@example.com
                 </a>
               </div>
 
               {/* Social Media Card */}
-              <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm border border-gray-700 rounded-xl p-8 shadow-xl">
-                <h3 className="text-xl font-bold text-white mb-6">Redes Sociais</h3>
+              <div className="bg-white/60 backdrop-blur-sm border border-[#987D7C]/20 rounded-xl p-8 shadow-xl">
+                <h3 className="text-xl font-bold text-[#3D2826] mb-6">Redes Sociais</h3>
                 <div className="space-y-4">
                   {socialLinks.map((social) => {
                     const Icon = social.icon;
@@ -245,7 +242,7 @@ const ContatoPage = () => {
                         href={social.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className={`flex items-center space-x-3 text-gray-300 ${social.color} transition-colors duration-300 group`}
+                        className={`flex items-center space-x-3 text-[#6B4F4D] ${social.color} transition-colors duration-300 group`}
                       >
                         <Icon size={24} />
                         <span className="group-hover:translate-x-1 transition-transform duration-300">
@@ -258,9 +255,9 @@ const ContatoPage = () => {
               </div>
 
               {/* Availability Card */}
-              <div className="bg-gradient-to-br from-blue-500/10 to-blue-600/10 border border-blue-500/30 rounded-xl p-8">
-                <h3 className="text-xl font-bold text-blue-400 mb-4">Disponibilidade</h3>
-                <p className="text-gray-300">
+              <div className="bg-[#987D7C]/10 border border-[#987D7C]/30 rounded-xl p-8">
+                <h3 className="text-xl font-bold text-[#987D7C] mb-4">Disponibilidade</h3>
+                <p className="text-[#6B4F4D]">
                   Disponível para projetos freelance e oportunidades de colaboração.
                   Respondo normalmente em até 24 horas.
                 </p>
