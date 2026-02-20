@@ -11,7 +11,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-[#EDE0DA] text-[#3D2826] py-8 mt-auto border-t border-[#987D7C]/20">
+    <footer className="bg-gradient-to-r from-[#EDCAA1]/80 to-[#E3FEFF]/80 backdrop-blur-sm text-[#3D2B1F] py-8 mt-auto border-t border-[#C4956A]/25">
       <div className="container mx-auto px-4">
         <div className="flex flex-col items-center space-y-6">
           {/* Social Links */}
@@ -24,7 +24,7 @@ const Footer = () => {
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-[#7A6160] hover:text-[#987D7C] transition-colors duration-300 transform hover:scale-110"
+                  className="text-[#7A5C42] hover:text-[#C4956A] transition-colors duration-300 transform hover:scale-110"
                   aria-label={social.label}
                 >
                   <Icon size={24} />
@@ -36,14 +36,14 @@ const Footer = () => {
           {/* Contact Email */}
           <a
             href="mailto:raul@example.com"
-            className="flex items-center space-x-2 text-[#7A6160] hover:text-[#987D7C] transition-colors duration-300"
+            className="flex items-center space-x-2 text-[#7A5C42] hover:text-[#C4956A] transition-colors duration-300"
           >
             <Mail size={18} />
             <span className="text-sm">raul@example.com</span>
           </a>
 
           {/* Copyright */}
-          <div className="text-center text-sm text-[#B09B9A]">
+          <div className="text-center text-sm text-[#A08060]">
             <p>&copy; {currentYear} Raul Passos Gardini. Todos os direitos reservados.</p>
           </div>
         </div>
