@@ -19,19 +19,19 @@ const ContatoPage = () => {
       icon: Github,
       href: 'https://github.com/raulpassosgardini',
       label: 'GitHub',
-      color: 'hover:text-[#A07550]'
+      color: 'hover:text-[#E0B896]'
     },
     {
       icon: Linkedin,
       href: 'https://linkedin.com/in/raulpassosgardini',
       label: 'LinkedIn',
-      color: 'hover:text-[#C4956A]'
+      color: 'hover:text-[#E0B896]'
     },
     {
       icon: Twitter,
       href: 'https://twitter.com/raulpassosgardini',
       label: 'Twitter',
-      color: 'hover:text-[#5BA4A6]'
+      color: 'hover:text-[#8FBDCC]'
     }
   ];
 
@@ -104,7 +104,7 @@ const ContatoPage = () => {
         <meta name="description" content="Entre em contato com Raul Passos Gardini" />
       </Helmet>
 
-      <div className="min-h-screen bg-gradient-to-r from-[#FCDFB8] via-[#E3FEFF] to-[#EDCAA1] py-20">
+      <div className="min-h-screen py-20">
         <div className="container mx-auto px-4">
           {/* Header */}
           <motion.div
@@ -113,10 +113,10 @@ const ContatoPage = () => {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h1 className="text-5xl md:text-6xl font-bold mb-4 text-[#3D2B1F]">
+            <h1 className="text-5xl md:text-6xl font-bold mb-4 text-[#F5EDE8]">
               Contato
             </h1>
-            <p className="text-xl text-[#7A5C42] max-w-2xl mx-auto">
+            <p className="text-xl text-[#D4C4B8] max-w-2xl mx-auto">
               Vamos conversar sobre seu próximo projeto
             </p>
           </motion.div>
@@ -128,13 +128,13 @@ const ContatoPage = () => {
               animate={{ x: 0, opacity: 1 }}
               transition={{ delay: 0.2, duration: 0.6 }}
             >
-              <div className="bg-white/45 backdrop-blur-sm border border-[#C4956A]/25 rounded-xl p-8 shadow-xl">
-                <h2 className="text-2xl font-bold text-[#3D2B1F] mb-6">Envie uma Mensagem</h2>
+              <div className="bg-white/10 backdrop-blur-sm border border-white/15 rounded-xl p-8 shadow-xl">
+                <h2 className="text-2xl font-bold text-[#F5EDE8] mb-6">Envie uma Mensagem</h2>
 
                 <form onSubmit={handleSubmit} className="space-y-6">
                   {/* Name Field */}
                   <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-[#7A5C42] mb-2">
+                    <label htmlFor="name" className="block text-sm font-medium text-[#D4C4B8] mb-2">
                       Nome
                     </label>
                     <input
@@ -143,19 +143,19 @@ const ContatoPage = () => {
                       name="name"
                       value={formData.name}
                       onChange={handleChange}
-                      className={`w-full px-4 py-3 bg-white/60 border ${
-                        errors.name ? 'border-red-400' : 'border-[#EDCAA1]'
-                      } rounded-lg text-[#3D2B1F] focus:outline-none focus:border-[#C4956A] transition-colors duration-300`}
+                      className={`w-full px-4 py-3 bg-white/10 border ${
+                        errors.name ? 'border-red-400' : 'border-white/20'
+                      } rounded-lg text-[#F5EDE8] focus:outline-none focus:border-[#E0B896] transition-colors duration-300`}
                       placeholder="Seu nome"
                     />
                     {errors.name && (
-                      <p className="mt-1 text-sm text-red-500">{errors.name}</p>
+                      <p className="mt-1 text-sm text-red-400">{errors.name}</p>
                     )}
                   </div>
 
                   {/* Email Field */}
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-[#7A5C42] mb-2">
+                    <label htmlFor="email" className="block text-sm font-medium text-[#D4C4B8] mb-2">
                       Email
                     </label>
                     <input
@@ -164,19 +164,19 @@ const ContatoPage = () => {
                       name="email"
                       value={formData.email}
                       onChange={handleChange}
-                      className={`w-full px-4 py-3 bg-white/60 border ${
-                        errors.email ? 'border-red-400' : 'border-[#EDCAA1]'
-                      } rounded-lg text-[#3D2B1F] focus:outline-none focus:border-[#C4956A] transition-colors duration-300`}
+                      className={`w-full px-4 py-3 bg-white/10 border ${
+                        errors.email ? 'border-red-400' : 'border-white/20'
+                      } rounded-lg text-[#F5EDE8] focus:outline-none focus:border-[#E0B896] transition-colors duration-300`}
                       placeholder="seu@email.com"
                     />
                     {errors.email && (
-                      <p className="mt-1 text-sm text-red-500">{errors.email}</p>
+                      <p className="mt-1 text-sm text-red-400">{errors.email}</p>
                     )}
                   </div>
 
                   {/* Message Field */}
                   <div>
-                    <label htmlFor="message" className="block text-sm font-medium text-[#7A5C42] mb-2">
+                    <label htmlFor="message" className="block text-sm font-medium text-[#D4C4B8] mb-2">
                       Mensagem
                     </label>
                     <textarea
@@ -185,20 +185,20 @@ const ContatoPage = () => {
                       value={formData.message}
                       onChange={handleChange}
                       rows="5"
-                      className={`w-full px-4 py-3 bg-white/60 border ${
-                        errors.message ? 'border-red-400' : 'border-[#EDCAA1]'
-                      } rounded-lg text-[#3D2B1F] focus:outline-none focus:border-[#C4956A] transition-colors duration-300 resize-none`}
+                      className={`w-full px-4 py-3 bg-white/10 border ${
+                        errors.message ? 'border-red-400' : 'border-white/20'
+                      } rounded-lg text-[#F5EDE8] focus:outline-none focus:border-[#E0B896] transition-colors duration-300 resize-none`}
                       placeholder="Sua mensagem..."
                     />
                     {errors.message && (
-                      <p className="mt-1 text-sm text-red-500">{errors.message}</p>
+                      <p className="mt-1 text-sm text-red-400">{errors.message}</p>
                     )}
                   </div>
 
                   {/* Submit Button */}
                   <Button
                     type="submit"
-                    className="w-full bg-[#C4956A] hover:bg-[#A07550] text-white font-semibold py-3 rounded-lg transition-all duration-300 transform hover:scale-105 flex items-center justify-center space-x-2"
+                    className="w-full bg-[#E0B896] hover:bg-[#C49A72] text-[#3D2B1F] font-semibold py-3 rounded-lg transition-all duration-300 transform hover:scale-105 flex items-center justify-center space-x-2"
                   >
                     <span>Enviar Mensagem</span>
                     <Send size={18} />
@@ -215,24 +215,24 @@ const ContatoPage = () => {
               className="space-y-8"
             >
               {/* Email Card */}
-              <div className="bg-white/45 backdrop-blur-sm border border-[#C4956A]/25 rounded-xl p-8 shadow-xl">
+              <div className="bg-white/10 backdrop-blur-sm border border-white/15 rounded-xl p-8 shadow-xl">
                 <div className="flex items-center space-x-4 mb-4">
-                  <div className="w-12 h-12 bg-[#FCDFB8] rounded-lg flex items-center justify-center">
-                    <Mail size={24} className="text-[#C4956A]" />
+                  <div className="w-12 h-12 bg-[#E0B896]/15 rounded-lg flex items-center justify-center">
+                    <Mail size={24} className="text-[#E0B896]" />
                   </div>
-                  <h3 className="text-xl font-bold text-[#3D2B1F]">Email</h3>
+                  <h3 className="text-xl font-bold text-[#F5EDE8]">Email</h3>
                 </div>
                 <a
                   href="mailto:raul@example.com"
-                  className="text-[#C4956A] hover:text-[#A07550] transition-colors duration-300"
+                  className="text-[#E0B896] hover:text-[#F5EDE8] transition-colors duration-300"
                 >
                   raul@example.com
                 </a>
               </div>
 
               {/* Social Media Card */}
-              <div className="bg-white/45 backdrop-blur-sm border border-[#C4956A]/25 rounded-xl p-8 shadow-xl">
-                <h3 className="text-xl font-bold text-[#3D2B1F] mb-6">Redes Sociais</h3>
+              <div className="bg-white/10 backdrop-blur-sm border border-white/15 rounded-xl p-8 shadow-xl">
+                <h3 className="text-xl font-bold text-[#F5EDE8] mb-6">Redes Sociais</h3>
                 <div className="space-y-4">
                   {socialLinks.map((social) => {
                     const Icon = social.icon;
@@ -242,7 +242,7 @@ const ContatoPage = () => {
                         href={social.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className={`flex items-center space-x-3 text-[#7A5C42] ${social.color} transition-colors duration-300 group`}
+                        className={`flex items-center space-x-3 text-[#D4C4B8] ${social.color} transition-colors duration-300 group`}
                       >
                         <Icon size={24} />
                         <span className="group-hover:translate-x-1 transition-transform duration-300">
@@ -255,9 +255,9 @@ const ContatoPage = () => {
               </div>
 
               {/* Availability Card */}
-              <div className="bg-[#FCDFB8]/50 border border-[#C4956A]/30 rounded-xl p-8 backdrop-blur-sm">
-                <h3 className="text-xl font-bold text-[#C4956A] mb-4">Disponibilidade</h3>
-                <p className="text-[#7A5C42]">
+              <div className="bg-[#E0B896]/10 border border-[#E0B896]/20 rounded-xl p-8 backdrop-blur-sm">
+                <h3 className="text-xl font-bold text-[#E0B896] mb-4">Disponibilidade</h3>
+                <p className="text-[#D4C4B8]">
                   Disponível para projetos freelance e oportunidades de colaboração.
                   Respondo normalmente em até 24 horas.
                 </p>

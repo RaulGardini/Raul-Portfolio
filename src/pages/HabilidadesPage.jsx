@@ -17,32 +17,32 @@ const HabilidadesPage = () => {
       percentage: 90,
       level: 'Advanced',
       icon: Code2,
-      color: 'from-[#C4956A] to-[#A07550]',
-      bgColor: 'bg-[#FCDFB8]'
+      color: 'from-[#E0B896] to-[#C49A72]',
+      bgColor: 'bg-[#E0B896]/15'
     },
     {
       name: 'CSS',
       percentage: 90,
       level: 'Advanced',
       icon: Palette,
-      color: 'from-[#EDCAA1] to-[#C4956A]',
-      bgColor: 'bg-[#FCDFB8]'
+      color: 'from-[#D4A878] to-[#E0B896]',
+      bgColor: 'bg-[#E0B896]/15'
     },
     {
       name: 'JavaScript',
       percentage: 70,
       level: 'Intermediate',
       icon: Braces,
-      color: 'from-[#85C4C6] to-[#5BA4A6]',
-      bgColor: 'bg-[#E3FEFF]'
+      color: 'from-[#8FBDCC] to-[#658899]',
+      bgColor: 'bg-[#8FBDCC]/15'
     },
     {
       name: 'C#',
       percentage: 50,
       level: 'Intermediate',
       icon: Box,
-      color: 'from-[#A8DFE0] to-[#85C4C6]',
-      bgColor: 'bg-[#E3FEFF]'
+      color: 'from-[#A8D0DE] to-[#8FBDCC]',
+      bgColor: 'bg-[#8FBDCC]/15'
     }
   ];
 
@@ -59,7 +59,7 @@ const HabilidadesPage = () => {
         <meta name="description" content="Habilidades técnicas de Raul Passos Gardini em desenvolvimento web" />
       </Helmet>
 
-      <div className="min-h-screen bg-gradient-to-r from-[#E3FEFF] to-[#FCDFB8] py-16">
+      <div className="min-h-screen py-16">
         <div className="container mx-auto px-4">
           {/* Header */}
           <motion.div
@@ -68,10 +68,10 @@ const HabilidadesPage = () => {
             transition={{ duration: 0.6 }}
             className="text-center mb-12"
           >
-            <h1 className="text-4xl md:text-5xl font-bold mb-3 text-[#3D2B1F]">
+            <h1 className="text-4xl md:text-5xl font-bold mb-3 text-[#F5EDE8]">
               Habilidades
             </h1>
-            <p className="text-lg text-[#7A5C42] max-w-2xl mx-auto">
+            <p className="text-lg text-[#D4C4B8] max-w-2xl mx-auto">
               Competências técnicas
             </p>
           </motion.div>
@@ -95,26 +95,26 @@ const HabilidadesPage = () => {
                       }
                     }
                   }}
-                  className="bg-white/40 backdrop-blur-sm border border-[#C4956A]/20 rounded-lg p-4 hover:border-[#C4956A]/50 transition-all duration-300"
+                  className="bg-white/10 backdrop-blur-sm border border-white/15 rounded-lg p-4 hover:border-white/25 transition-all duration-300"
                 >
                   <div className="flex items-center gap-4">
                     {/* Icon */}
-                    <div className={`w-10 h-10 ${skill.bgColor}/60 rounded-md flex items-center justify-center flex-shrink-0`}>
-                      <Icon size={20} className="text-[#C4956A]" />
+                    <div className={`w-10 h-10 ${skill.bgColor} rounded-md flex items-center justify-center flex-shrink-0`}>
+                      <Icon size={20} className="text-[#F5EDE8]" />
                     </div>
 
                     {/* Content */}
                     <div className="flex-grow">
                       <div className="flex justify-between items-center mb-2">
                         <div>
-                          <span className="font-bold text-[#3D2B1F] text-base mr-2">{skill.name}</span>
-                          <span className="text-xs text-[#A08060] hidden sm:inline-block">{skill.level}</span>
+                          <span className="font-bold text-[#F5EDE8] text-base mr-2">{skill.name}</span>
+                          <span className="text-xs text-[#A89888] hidden sm:inline-block">{skill.level}</span>
                         </div>
-                        <span className="font-bold text-[#C4956A] text-sm">{skill.percentage}%</span>
+                        <span className="font-bold text-[#E0B896] text-sm">{skill.percentage}%</span>
                       </div>
 
                       {/* Progress Bar */}
-                      <div className="h-2 bg-[#EDCAA1]/50 rounded-full overflow-hidden w-full">
+                      <div className="h-2 bg-white/15 rounded-full overflow-hidden w-full">
                         <motion.div
                           initial={{ width: 0 }}
                           animate={controls}
@@ -145,15 +145,15 @@ const HabilidadesPage = () => {
             transition={{ delay: 0.8, duration: 0.6 }}
             className="max-w-3xl mx-auto mt-10 grid grid-cols-1 md:grid-cols-2 gap-4"
           >
-            <div className="bg-[#FCDFB8]/50 border border-[#C4956A]/30 rounded-lg p-4 backdrop-blur-sm">
-              <h3 className="text-lg font-bold text-[#C4956A] mb-1">Front-end</h3>
-              <p className="text-sm text-[#7A5C42]">
+            <div className="bg-[#E0B896]/10 border border-[#E0B896]/20 rounded-lg p-4 backdrop-blur-sm">
+              <h3 className="text-lg font-bold text-[#E0B896] mb-1">Front-end</h3>
+              <p className="text-sm text-[#D4C4B8]">
                 Interfaces modernas e responsivas
               </p>
             </div>
-            <div className="bg-[#E3FEFF]/50 border border-[#85C4C6]/40 rounded-lg p-4 backdrop-blur-sm">
-              <h3 className="text-lg font-bold text-[#5BA4A6] mb-1">Back-end</h3>
-              <p className="text-sm text-[#7A5C42]">
+            <div className="bg-[#8FBDCC]/10 border border-[#8FBDCC]/20 rounded-lg p-4 backdrop-blur-sm">
+              <h3 className="text-lg font-bold text-[#8FBDCC] mb-1">Back-end</h3>
+              <p className="text-sm text-[#D4C4B8]">
                 APIs robustas e escaláveis
               </p>
             </div>
