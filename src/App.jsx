@@ -3,6 +3,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import HomePage from '@/pages/HomePage';
 import ExperienciaPage from '@/pages/ExperienciaPage';
+import ProjetosPage from '@/pages/ProjetosPage';
 import HabilidadesPage from '@/pages/HabilidadesPage';
 import ContatoPage from '@/pages/ContatoPage';
 import { Toaster } from '@/components/ui/toaster';
@@ -17,6 +18,9 @@ function App() {
         </section>
         <section id="experiencias">
           <ExperienciaPage />
+        </section>
+        <section id="projetos">
+          <ProjetosPage />
         </section>
         <section id="habilidades">
           <HabilidadesPage />

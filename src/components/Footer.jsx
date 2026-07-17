@@ -1,13 +1,12 @@
 import React from 'react';
-import { Github, Linkedin, Twitter, Mail } from 'lucide-react';
+import { Github, Linkedin, Mail } from 'lucide-react';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const socialLinks = [
-    { icon: Github, href: 'https://github.com/raulpassosgardini', label: 'GitHub' },
-    { icon: Linkedin, href: 'https://linkedin.com/in/raulpassosgardini', label: 'LinkedIn' },
-    { icon: Twitter, href: 'https://twitter.com/raulpassosgardini', label: 'Twitter' }
+    { icon: Github, href: 'https://github.com/RaulGardini', label: 'GitHub' },
+    { icon: Linkedin, href: 'https://www.linkedin.com/in/raul-gardini-2595712b1/', label: 'LinkedIn' }
   ];
 
   return (
@@ -35,11 +34,11 @@ const Footer = () => {
 
           {/* Contact Email */}
           <a
-            href="mailto:raul@example.com"
+            href="mailto:rap.gardini@gmail.com"
             className="flex items-center space-x-2 text-[#D4C4B8] hover:text-[#E0B896] transition-colors duration-300"
           >
             <Mail size={18} />
-            <span className="text-sm">raul@example.com</span>
+            <span className="text-sm">rap.gardini@gmail.com</span>
           </a>
 
           {/* Copyright */}

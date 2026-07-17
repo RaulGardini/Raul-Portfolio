@@ -1,7 +1,7 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import { motion } from 'framer-motion';
-import { Briefcase, Code, Server, CheckCircle2 } from 'lucide-react';
+import { Briefcase, Code, Server, CheckCircle2, GraduationCap } from 'lucide-react';
 
 const ExperienciaPage = () => {
   return (
@@ -44,7 +44,13 @@ const ExperienciaPage = () => {
                 </div>
                 <h2 className="text-3xl md:text-4xl font-bold text-[#F5EDE8] mb-2">Desenvolvedor Full Stack</h2>
                 <p className="text-[#E0B896] font-medium text-lg">BitCodeHouse • Freelance</p>
-                <p className="text-[#A89888] mt-2">Mais de 1 ano de experiência</p>
+                <p className="text-[#A89888] mt-2">Fevereiro de 2025 – Atual</p>
+                <p className="text-[#D4C4B8] leading-relaxed max-w-2xl mx-auto mt-6 text-sm md:text-base">
+                  Atuo no setor financeiro, desenvolvendo e mantendo APIs e sistemas internos de ponta a ponta:
+                  construo APIs RESTful no back-end, desenvolvo interfaces em React no front-end e implemento
+                  soluções complexas — como um sistema worker para processamento de tarefas em segundo plano.
+                  Recentemente venho me dedicando a automação de processos e agentes de IA.
+                </p>
               </div>
 
               {/* Skills Split Section */}
@@ -91,6 +97,28 @@ const ExperienciaPage = () => {
                 </div>
               </div>
 
+            </div>
+          </motion.div>
+
+          {/* Formação Acadêmica */}
+          <motion.div
+            initial={{ y: 50, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="max-w-4xl mx-auto mt-8"
+          >
+            <div className="bg-white/10 backdrop-blur-sm border border-white/15 rounded-2xl p-8 shadow-xl hover:border-white/25 transition-all duration-500">
+              <div className="flex flex-col sm:flex-row items-center sm:items-start gap-6 text-center sm:text-left">
+                <div className="w-16 h-16 bg-[#8FBDCC]/20 border border-[#8FBDCC]/30 rounded-2xl flex items-center justify-center flex-shrink-0">
+                  <GraduationCap size={32} className="text-[#8FBDCC]" />
+                </div>
+                <div>
+                  <h2 className="text-2xl font-bold text-[#F5EDE8] mb-1">Ciência da Computação</h2>
+                  <p className="text-[#8FBDCC] font-medium">Universidade de Fortaleza (Unifor)</p>
+                  <p className="text-[#A89888] mt-2 text-sm">Graduação em andamento</p>
+                </div>
+              </div>
             </div>
           </motion.div>
         </div>
