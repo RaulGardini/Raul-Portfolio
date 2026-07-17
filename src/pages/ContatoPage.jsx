@@ -1,9 +1,15 @@
 import React, { useState } from 'react';
 import { Helmet } from 'react-helmet';
 import { motion } from 'framer-motion';
-import { Mail, Github, Linkedin, MapPin, Send } from 'lucide-react';
+import { Mail, Github, Linkedin, MapPin, Send, Loader2 } from 'lucide-react';
 import { useToast } from '@/components/ui/use-toast';
 import { Button } from '@/components/ui/button';
+
+// Endpoint do Formspree. Crie uma conta grátis em https://formspree.io,
+// gere um formulário e cole aqui o endpoint (ex: https://formspree.io/f/abcdwxyz),
+// ou defina a variável de ambiente VITE_FORMSPREE_ENDPOINT.
+const FORMSPREE_ENDPOINT =
+  import.meta.env.VITE_FORMSPREE_ENDPOINT || 'https://formspree.io/f/SEU_ID_AQUI';
 
 const ContatoPage = () => {
   const { toast } = useToast();
@@ -13,6 +19,7 @@ const ContatoPage = () => {
     message: ''
   });
   const [errors, setErrors] = useState({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const socialLinks = [
     {
@@ -66,28 +73,70 @@ const ContatoPage = () => {
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (validateForm()) {
-      toast({
-        title: 'Mensagem Enviada! ✓',
-        description: 'Obrigado pelo contato! Responderei em breve.',
-        duration: 5000
-      });
-
-      setFormData({
-        name: '',
-        email: '',
-        message: ''
-      });
-    } else {
+    if (!validateForm()) {
       toast({
         title: 'Erro no Formulário',
         description: 'Por favor, corrija os erros antes de enviar.',
         variant: 'destructive',
         duration: 5000
       });
+      return;
+    }
+
+    if (FORMSPREE_ENDPOINT.includes('SEU_ID_AQUI')) {
+      toast({
+        title: 'Envio não configurado',
+        description: 'O endpoint do Formspree ainda não foi definido no código.',
+        variant: 'destructive',
+        duration: 5000
+      });
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch(FORMSPREE_ENDPOINT, {
+        method: 'POST',
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+          _subject: `Contato do portfólio — ${formData.name}`
+        })
+      });
+
+      if (response.ok) {
+        toast({
+          title: 'Mensagem Enviada! ✓',
+          description: 'Obrigado pelo contato! Responderei em breve.',
+          duration: 5000
+        });
+
+        setFormData({
+          name: '',
+          email: '',
+          message: ''
+        });
+      } else {
+        throw new Error('Falha no envio');
+      }
+    } catch (error) {
+      toast({
+        title: 'Erro ao Enviar',
+        description: 'Não foi possível enviar sua mensagem. Tente novamente ou use o email diretamente.',
+        variant: 'destructive',
+        duration: 6000
+      });
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -192,10 +241,20 @@ const ContatoPage = () => {
                   {/* Submit Button */}
                   <Button
                     type="submit"
-                    className="w-full bg-[#E0B896] hover:bg-[#C49A72] text-[#3D2B1F] font-semibold py-3 rounded-lg transition-all duration-300 transform hover:scale-105 flex items-center justify-center space-x-2"
+                    disabled={isSubmitting}
+                    className="w-full bg-[#E0B896] hover:bg-[#C49A72] text-[#3D2B1F] font-semibold py-3 rounded-lg transition-all duration-300 transform hover:scale-105 flex items-center justify-center space-x-2 disabled:opacity-70 disabled:cursor-not-allowed disabled:hover:scale-100"
                   >
-                    <span>Enviar Mensagem</span>
-                    <Send size={18} />
+                    {isSubmitting ? (
+                      <>
+                        <Loader2 size={18} className="animate-spin" />
+                        <span>Enviando...</span>
+                      </>
+                    ) : (
+                      <>
+                        <span>Enviar Mensagem</span>
+                        <Send size={18} />
+                      </>
+                    )}
                   </Button>
                 </form>
               </div>
