@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Helmet } from 'react-helmet';
 import { motion } from 'framer-motion';
-import { Mail, Github, Linkedin, Twitter, Send } from 'lucide-react';
+import { Mail, Github, Linkedin, MapPin, Send } from 'lucide-react';
 import { useToast } from '@/components/ui/use-toast';
 import { Button } from '@/components/ui/button';
 
@@ -17,21 +17,15 @@ const ContatoPage = () => {
   const socialLinks = [
     {
       icon: Github,
-      href: 'https://github.com/raulpassosgardini',
+      href: 'https://github.com/RaulGardini',
       label: 'GitHub',
       color: 'hover:text-[#E0B896]'
     },
     {
       icon: Linkedin,
-      href: 'https://linkedin.com/in/raulpassosgardini',
+      href: 'https://www.linkedin.com/in/raul-gardini-2595712b1/',
       label: 'LinkedIn',
       color: 'hover:text-[#E0B896]'
-    },
-    {
-      icon: Twitter,
-      href: 'https://twitter.com/raulpassosgardini',
-      label: 'Twitter',
-      color: 'hover:text-[#8FBDCC]'
     }
   ];
 
@@ -223,11 +217,22 @@ const ContatoPage = () => {
                   <h3 className="text-xl font-bold text-[#F5EDE8]">Email</h3>
                 </div>
                 <a
-                  href="mailto:raul@example.com"
-                  className="text-[#E0B896] hover:text-[#F5EDE8] transition-colors duration-300"
+                  href="mailto:rap.gardini@gmail.com"
+                  className="text-[#E0B896] hover:text-[#F5EDE8] transition-colors duration-300 break-all"
                 >
-                  raul@example.com
+                  rap.gardini@gmail.com
                 </a>
+              </div>
+
+              {/* Location Card */}
+              <div className="bg-white/10 backdrop-blur-sm border border-white/15 rounded-xl p-8 shadow-xl">
+                <div className="flex items-center space-x-4 mb-4">
+                  <div className="w-12 h-12 bg-[#8FBDCC]/15 rounded-lg flex items-center justify-center">
+                    <MapPin size={24} className="text-[#8FBDCC]" />
+                  </div>
+                  <h3 className="text-xl font-bold text-[#F5EDE8]">Localização</h3>
+                </div>
+                <p className="text-[#D4C4B8]">Fortaleza, Ceará — Brasil</p>
               </div>
 
               {/* Social Media Card */}

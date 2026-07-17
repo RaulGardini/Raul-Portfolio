@@ -41,8 +41,10 @@ const HomePage = () => {
                 transition={{ delay: 0.6, duration: 0.6 }}
                 className="text-base md:text-lg text-[#D4C4B8] mb-8 leading-relaxed max-w-lg mx-auto md:mx-0"
               >
-                Especialista em desenvolvimento full stack com expertise em React para front-end e C# para back-end.
-                Apaixonado por criar soluções elegantes e eficientes que transformam ideias em realidade digital.
+                Atuo no setor financeiro desenvolvendo e mantendo APIs e sistemas internos. No back-end trabalho com
+                C#, .NET, Entity Framework Core e SQL Server; no front-end, com React, TypeScript e React Native.
+                Atualmente venho me dedicando a automação de processos e agentes de IA. Estudante de Ciência da
+                Computação na UNIFOR.
               </motion.p>
 
               <motion.div
@@ -67,12 +69,10 @@ const HomePage = () => {
               transition={{ duration: 0.8, type: "spring" }}
               className="w-full md:w-auto flex justify-center"
             >
-              <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-white/20 shadow-[0_0_50px_rgba(0,0,0,0.4)]">
-                <img
-                  src="https://images.unsplash.com/photo-1679697945014-e140813c29a7"
-                  alt="Raul Passos Gardini"
-                  className="w-full h-full object-cover"
-                />
+              <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-white/20 shadow-[0_0_50px_rgba(0,0,0,0.4)] bg-gradient-to-br from-[#E0B896] via-[#C49A72] to-[#658899] flex items-center justify-center">
+                <span className="text-7xl md:text-8xl font-bold text-[#F5EDE8] tracking-tight select-none drop-shadow-lg">
+                  RG
+                </span>
               </div>
             </motion.div>
 
