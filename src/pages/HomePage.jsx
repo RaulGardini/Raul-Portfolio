@@ -21,7 +21,7 @@ const HomePage = () => {
                 initial={{ y: 50, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.2, duration: 0.6 }}
-                className="text-4xl md:text-6xl font-bold mb-4 text-[#F5EDE8]"
+                className="text-4xl md:text-6xl font-bold mb-4 text-[#FAFAF9]"
               >
                 Raul Passos Gardini
               </motion.h1>
@@ -30,7 +30,7 @@ const HomePage = () => {
                 initial={{ y: 50, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.4, duration: 0.6 }}
-                className="text-xl md:text-3xl font-semibold mb-6 text-[#E0B896]"
+                className="text-xl md:text-3xl font-semibold mb-6 text-[#D4B483]"
               >
                 Desenvolvedor Full Stack
               </motion.h2>
@@ -39,7 +39,7 @@ const HomePage = () => {
                 initial={{ y: 50, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.6, duration: 0.6 }}
-                className="text-base md:text-lg text-[#D4C4B8] mb-8 leading-relaxed max-w-lg mx-auto md:mx-0"
+                className="text-base md:text-lg text-[#A1A1AA] mb-8 leading-relaxed max-w-lg mx-auto md:mx-0"
               >
                 Atuo no setor financeiro desenvolvendo e mantendo APIs e sistemas internos. No back-end trabalho com
                 C#, .NET, Entity Framework Core e SQL Server; no front-end, com React, TypeScript e React Native.
@@ -54,7 +54,7 @@ const HomePage = () => {
               >
                 <button
                   onClick={() => document.getElementById('experiencias').scrollIntoView({ behavior: 'smooth' })}
-                  className="inline-flex items-center space-x-2 bg-[#E0B896] hover:bg-[#C49A72] text-[#3D2B1F] font-semibold px-8 py-4 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-[#E0B896]/30"
+                  className="inline-flex items-center space-x-2 bg-[#D4B483] hover:bg-[#C2A05E] text-[#0A0A0B] font-semibold px-8 py-4 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-[#D4B483]/30"
                 >
                   <span>Ver Portfólio</span>
                   <ArrowRight size={20} />
@@ -69,8 +69,8 @@ const HomePage = () => {
               transition={{ duration: 0.8, type: "spring" }}
               className="w-full md:w-auto flex justify-center"
             >
-              <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-white/20 shadow-[0_0_50px_rgba(0,0,0,0.4)] bg-gradient-to-br from-[#E0B896] via-[#C49A72] to-[#658899] flex items-center justify-center">
-                <span className="text-7xl md:text-8xl font-bold text-[#F5EDE8] tracking-tight select-none drop-shadow-lg">
+              <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-[#D4B483]/30 shadow-[0_0_60px_rgba(212,180,131,0.25)] bg-gradient-to-br from-[#D4B483] via-[#C2A05E] to-[#0A0A0B] flex items-center justify-center">
+                <span className="text-7xl md:text-8xl font-bold text-[#FAFAF9] tracking-tight select-none drop-shadow-lg">
                   RG
                 </span>
               </div>
@@ -91,7 +91,7 @@ const HomePage = () => {
               repeat: Infinity,
               ease: "easeInOut"
             }}
-            className="absolute top-20 right-20 w-96 h-96 bg-[#E0B896]/15 rounded-full blur-[120px]"
+            className="absolute top-20 right-20 w-96 h-96 bg-[#D4B483]/10 rounded-full blur-[130px]"
           />
           <motion.div
             animate={{
@@ -104,7 +104,7 @@ const HomePage = () => {
               ease: "easeInOut",
               delay: 1
             }}
-            className="absolute bottom-20 left-20 w-80 h-80 bg-[#8FBDCC]/15 rounded-full blur-[120px]"
+            className="absolute bottom-20 left-20 w-80 h-80 bg-[#C7C7CC]/10 rounded-full blur-[130px]"
           />
         </div>
       </div>

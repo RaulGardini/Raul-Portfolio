@@ -1,8 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap');
 
 * {
   margin: 0;
@@ -12,9 +12,19 @@
 
 body {
   font-family: 'DM Sans', sans-serif;
-  background-color: #6E5F52;
-  color: #F5EDE8;
+  background-color: #0A0A0B;
+  color: #FAFAF9;
   overflow-x: hidden;
+}
+
+/* App background: deep black with a very soft, diffuse ambient wash
+   (large + low opacity so it reads as light, not as a blob/stain) */
+.bg-app {
+  background-color: #0A0A0B;
+  background-image:
+    radial-gradient(120rem 90rem at 30% -10%, rgba(212, 180, 131, 0.045), transparent 60%),
+    radial-gradient(120rem 90rem at 110% 120%, rgba(199, 199, 204, 0.035), transparent 60%);
+  background-attachment: fixed;
 }
 
 /* Smooth scrolling */
@@ -28,16 +38,16 @@ html {
 }
 
 ::-webkit-scrollbar-track {
-  background: rgba(0, 0, 0, 0.2);
+  background: rgba(0, 0, 0, 0.3);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.3);
+  background: rgba(212, 180, 131, 0.35);
   border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(255, 255, 255, 0.5);
+  background: rgba(212, 180, 131, 0.55);
 }
 
 /* Global button styles */
@@ -67,7 +77,7 @@ a {
 
 /* Focus styles for accessibility */
 *:focus {
-  outline: 2px solid rgba(255, 255, 255, 0.6);
+  outline: 2px solid rgba(212, 180, 131, 0.7);
   outline-offset: 2px;
 }
 
@@ -75,19 +85,39 @@ a {
   outline: none;
 }
 
-/* Gradient text effect */
+/* Liquid glass: frosted panels with a diagonal specular sheen, bright edge
+   highlight, inner ring and depth. Applies to .glass and any element using a
+   Tailwind backdrop-blur utility. */
+.glass,
+[class*="backdrop-blur"] {
+  backdrop-filter: blur(26px) saturate(165%) brightness(1.06);
+  -webkit-backdrop-filter: blur(26px) saturate(165%) brightness(1.06);
+  background-image: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.11) 0%,
+    rgba(255, 255, 255, 0.02) 32%,
+    rgba(255, 255, 255, 0.00) 55%,
+    rgba(255, 255, 255, 0.045) 100%
+  );
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.20),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.05),
+    inset 0 -1px 1px rgba(0, 0, 0, 0.35),
+    0 18px 50px -18px rgba(0, 0, 0, 0.80);
+}
+
+/* Gradient text effect (gold) */
 .gradient-text {
-  background: linear-gradient(135deg, #E0B896 0%, #8FBDCC 100%);
+  background: linear-gradient(135deg, #D4B483 0%, #FAFAF9 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-/* Glassmorphism effect */
+/* Glassmorphism base */
 .glass {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.10);
 }
 
 /* Animation classes */
@@ -119,22 +149,22 @@ a {
   animation: slideIn 0.6s ease-out;
 }
 
-/* Hover glow effect */
+/* Hover glow effect (gold) */
 .hover-glow {
   transition: box-shadow 0.3s ease;
 }
 
 .hover-glow:hover {
-  box-shadow: 0 0 20px rgba(224, 184, 150, 0.4);
+  box-shadow: 0 0 24px rgba(212, 180, 131, 0.35);
 }
 
 /* Custom gradient backgrounds */
 .bg-gradient-main {
-  background: linear-gradient(90deg, #6E5F52 0%, #786556 48%, #658899 97%);
+  background: #0A0A0B;
 }
 
 .bg-gradient-card {
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.06);
 }
 
 /* Loading animation */
@@ -161,20 +191,20 @@ a {
   }
 }
 
-/* Selection color */
+/* Selection color (gold) */
 ::selection {
-  background-color: rgba(224, 184, 150, 0.5);
-  color: #FFFFFF;
+  background-color: rgba(212, 180, 131, 0.35);
+  color: #FAFAF9;
 }
 
 /* Improved form input styles */
 input, textarea {
-  color: #F5EDE8;
+  color: #FAFAF9;
 }
 
 input::placeholder,
 textarea::placeholder {
-  color: rgba(245, 237, 232, 0.45);
+  color: rgba(250, 250, 249, 0.40);
 }
 
 /* Button press effect */
