@@ -10,7 +10,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-black/20 backdrop-blur-md text-[#F5EDE8] py-8 mt-auto border-t border-white/10">
+    <footer className="bg-black/20 backdrop-blur-md text-[#FAFAF9] py-8 mt-auto border-t border-white/10">
       <div className="container mx-auto px-4">
         <div className="flex flex-col items-center space-y-6">
           {/* Social Links */}
@@ -23,7 +23,7 @@ const Footer = () => {
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-[#D4C4B8] hover:text-[#E0B896] transition-colors duration-300 transform hover:scale-110"
+                  className="text-[#A1A1AA] hover:text-[#D4B483] transition-colors duration-300 transform hover:scale-110"
                   aria-label={social.label}
                 >
                   <Icon size={24} />
@@ -35,14 +35,14 @@ const Footer = () => {
           {/* Contact Email */}
           <a
             href="mailto:rap.gardini@gmail.com"
-            className="flex items-center space-x-2 text-[#D4C4B8] hover:text-[#E0B896] transition-colors duration-300"
+            className="flex items-center space-x-2 text-[#A1A1AA] hover:text-[#D4B483] transition-colors duration-300"
           >
             <Mail size={18} />
             <span className="text-sm">rap.gardini@gmail.com</span>
           </a>
 
           {/* Copyright */}
-          <div className="text-center text-sm text-[#A89888]">
+          <div className="text-center text-sm text-[#71717A]">
             <p>&copy; {currentYear} Raul Passos Gardini. Todos os direitos reservados.</p>
           </div>
         </div>

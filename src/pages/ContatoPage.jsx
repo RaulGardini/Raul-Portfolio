@@ -26,13 +26,13 @@ const ContatoPage = () => {
       icon: Github,
       href: 'https://github.com/RaulGardini',
       label: 'GitHub',
-      color: 'hover:text-[#E0B896]'
+      color: 'hover:text-[#D4B483]'
     },
     {
       icon: Linkedin,
       href: 'https://www.linkedin.com/in/raul-gardini-2595712b1/',
       label: 'LinkedIn',
-      color: 'hover:text-[#E0B896]'
+      color: 'hover:text-[#D4B483]'
     }
   ];
 
@@ -156,10 +156,10 @@ const ContatoPage = () => {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h1 className="text-5xl md:text-6xl font-bold mb-4 text-[#F5EDE8]">
+            <h1 className="text-5xl md:text-6xl font-bold mb-4 text-[#FAFAF9]">
               Contato
             </h1>
-            <p className="text-xl text-[#D4C4B8] max-w-2xl mx-auto">
+            <p className="text-xl text-[#A1A1AA] max-w-2xl mx-auto">
               Vamos conversar sobre seu próximo projeto
             </p>
           </motion.div>
@@ -171,13 +171,13 @@ const ContatoPage = () => {
               animate={{ x: 0, opacity: 1 }}
               transition={{ delay: 0.2, duration: 0.6 }}
             >
-              <div className="bg-white/10 backdrop-blur-sm border border-white/15 rounded-xl p-8 shadow-xl">
-                <h2 className="text-2xl font-bold text-[#F5EDE8] mb-6">Envie uma Mensagem</h2>
+              <div className="bg-white/[0.06] backdrop-blur-xl border border-white/10 rounded-xl p-8 shadow-xl">
+                <h2 className="text-2xl font-bold text-[#FAFAF9] mb-6">Envie uma Mensagem</h2>
 
                 <form onSubmit={handleSubmit} className="space-y-6">
                   {/* Name Field */}
                   <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-[#D4C4B8] mb-2">
+                    <label htmlFor="name" className="block text-sm font-medium text-[#A1A1AA] mb-2">
                       Nome
                     </label>
                     <input
@@ -186,9 +186,9 @@ const ContatoPage = () => {
                       name="name"
                       value={formData.name}
                       onChange={handleChange}
-                      className={`w-full px-4 py-3 bg-white/10 border ${
+                      className={`w-full px-4 py-3 bg-white/[0.06] border ${
                         errors.name ? 'border-red-400' : 'border-white/20'
-                      } rounded-lg text-[#F5EDE8] focus:outline-none focus:border-[#E0B896] transition-colors duration-300`}
+                      } rounded-lg text-[#FAFAF9] focus:outline-none focus:border-[#D4B483] transition-colors duration-300`}
                       placeholder="Seu nome"
                     />
                     {errors.name && (
@@ -198,7 +198,7 @@ const ContatoPage = () => {
 
                   {/* Email Field */}
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-[#D4C4B8] mb-2">
+                    <label htmlFor="email" className="block text-sm font-medium text-[#A1A1AA] mb-2">
                       Email
                     </label>
                     <input
@@ -207,9 +207,9 @@ const ContatoPage = () => {
                       name="email"
                       value={formData.email}
                       onChange={handleChange}
-                      className={`w-full px-4 py-3 bg-white/10 border ${
+                      className={`w-full px-4 py-3 bg-white/[0.06] border ${
                         errors.email ? 'border-red-400' : 'border-white/20'
-                      } rounded-lg text-[#F5EDE8] focus:outline-none focus:border-[#E0B896] transition-colors duration-300`}
+                      } rounded-lg text-[#FAFAF9] focus:outline-none focus:border-[#D4B483] transition-colors duration-300`}
                       placeholder="seu@email.com"
                     />
                     {errors.email && (
@@ -219,7 +219,7 @@ const ContatoPage = () => {
 
                   {/* Message Field */}
                   <div>
-                    <label htmlFor="message" className="block text-sm font-medium text-[#D4C4B8] mb-2">
+                    <label htmlFor="message" className="block text-sm font-medium text-[#A1A1AA] mb-2">
                       Mensagem
                     </label>
                     <textarea
@@ -228,9 +228,9 @@ const ContatoPage = () => {
                       value={formData.message}
                       onChange={handleChange}
                       rows="5"
-                      className={`w-full px-4 py-3 bg-white/10 border ${
+                      className={`w-full px-4 py-3 bg-white/[0.06] border ${
                         errors.message ? 'border-red-400' : 'border-white/20'
-                      } rounded-lg text-[#F5EDE8] focus:outline-none focus:border-[#E0B896] transition-colors duration-300 resize-none`}
+                      } rounded-lg text-[#FAFAF9] focus:outline-none focus:border-[#D4B483] transition-colors duration-300 resize-none`}
                       placeholder="Sua mensagem..."
                     />
                     {errors.message && (
@@ -242,7 +242,7 @@ const ContatoPage = () => {
                   <Button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full bg-[#E0B896] hover:bg-[#C49A72] text-[#3D2B1F] font-semibold py-3 rounded-lg transition-all duration-300 transform hover:scale-105 flex items-center justify-center space-x-2 disabled:opacity-70 disabled:cursor-not-allowed disabled:hover:scale-100"
+                    className="w-full bg-[#D4B483] hover:bg-[#C2A05E] text-[#0A0A0B] font-semibold py-3 rounded-lg transition-all duration-300 transform hover:scale-105 flex items-center justify-center space-x-2 disabled:opacity-70 disabled:cursor-not-allowed disabled:hover:scale-100"
                   >
                     {isSubmitting ? (
                       <>
@@ -268,35 +268,35 @@ const ContatoPage = () => {
               className="space-y-8"
             >
               {/* Email Card */}
-              <div className="bg-white/10 backdrop-blur-sm border border-white/15 rounded-xl p-8 shadow-xl">
+              <div className="bg-white/[0.06] backdrop-blur-xl border border-white/10 rounded-xl p-8 shadow-xl">
                 <div className="flex items-center space-x-4 mb-4">
-                  <div className="w-12 h-12 bg-[#E0B896]/15 rounded-lg flex items-center justify-center">
-                    <Mail size={24} className="text-[#E0B896]" />
+                  <div className="w-12 h-12 bg-[#D4B483]/15 rounded-lg flex items-center justify-center">
+                    <Mail size={24} className="text-[#D4B483]" />
                   </div>
-                  <h3 className="text-xl font-bold text-[#F5EDE8]">Email</h3>
+                  <h3 className="text-xl font-bold text-[#FAFAF9]">Email</h3>
                 </div>
                 <a
                   href="mailto:rap.gardini@gmail.com"
-                  className="text-[#E0B896] hover:text-[#F5EDE8] transition-colors duration-300 break-all"
+                  className="text-[#D4B483] hover:text-[#FAFAF9] transition-colors duration-300 break-all"
                 >
                   rap.gardini@gmail.com
                 </a>
               </div>
 
               {/* Location Card */}
-              <div className="bg-white/10 backdrop-blur-sm border border-white/15 rounded-xl p-8 shadow-xl">
+              <div className="bg-white/[0.06] backdrop-blur-xl border border-white/10 rounded-xl p-8 shadow-xl">
                 <div className="flex items-center space-x-4 mb-4">
-                  <div className="w-12 h-12 bg-[#8FBDCC]/15 rounded-lg flex items-center justify-center">
-                    <MapPin size={24} className="text-[#8FBDCC]" />
+                  <div className="w-12 h-12 bg-[#C7C7CC]/15 rounded-lg flex items-center justify-center">
+                    <MapPin size={24} className="text-[#C7C7CC]" />
                   </div>
-                  <h3 className="text-xl font-bold text-[#F5EDE8]">Localização</h3>
+                  <h3 className="text-xl font-bold text-[#FAFAF9]">Localização</h3>
                 </div>
-                <p className="text-[#D4C4B8]">Fortaleza, Ceará — Brasil</p>
+                <p className="text-[#A1A1AA]">Fortaleza, Ceará — Brasil</p>
               </div>
 
               {/* Social Media Card */}
-              <div className="bg-white/10 backdrop-blur-sm border border-white/15 rounded-xl p-8 shadow-xl">
-                <h3 className="text-xl font-bold text-[#F5EDE8] mb-6">Redes Sociais</h3>
+              <div className="bg-white/[0.06] backdrop-blur-xl border border-white/10 rounded-xl p-8 shadow-xl">
+                <h3 className="text-xl font-bold text-[#FAFAF9] mb-6">Redes Sociais</h3>
                 <div className="space-y-4">
                   {socialLinks.map((social) => {
                     const Icon = social.icon;
@@ -306,7 +306,7 @@ const ContatoPage = () => {
                         href={social.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className={`flex items-center space-x-3 text-[#D4C4B8] ${social.color} transition-colors duration-300 group`}
+                        className={`flex items-center space-x-3 text-[#A1A1AA] ${social.color} transition-colors duration-300 group`}
                       >
                         <Icon size={24} />
                         <span className="group-hover:translate-x-1 transition-transform duration-300">
@@ -319,9 +319,9 @@ const ContatoPage = () => {
               </div>
 
               {/* Availability Card */}
-              <div className="bg-[#E0B896]/10 border border-[#E0B896]/20 rounded-xl p-8 backdrop-blur-sm">
-                <h3 className="text-xl font-bold text-[#E0B896] mb-4">Disponibilidade</h3>
-                <p className="text-[#D4C4B8]">
+              <div className="bg-[#D4B483]/10 border border-[#D4B483]/20 rounded-xl p-8 backdrop-blur-xl">
+                <h3 className="text-xl font-bold text-[#D4B483] mb-4">Disponibilidade</h3>
+                <p className="text-[#A1A1AA]">
                   Disponível para projetos freelance e oportunidades de colaboração.
                   Respondo normalmente em até 24 horas.
                 </p>

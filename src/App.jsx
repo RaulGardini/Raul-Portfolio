@@ -10,7 +10,7 @@ import { Toaster } from '@/components/ui/toaster';
 
 function App() {
   return (
-    <div className="flex flex-col min-h-screen bg-gradient-to-r from-[#6E5F52] via-[#786556] to-[#658899]">
+    <div className="flex flex-col min-h-screen bg-app">
       <Header />
       <main className="flex-1">
         <section id="home">

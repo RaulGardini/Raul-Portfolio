@@ -10,7 +10,7 @@ const projects = [
     description:
       'Aplicação de lista de tarefas voltada para o gerenciamento de projetos. Permite organizar atividades, acompanhar o andamento e manter tudo estruturado do começo ao fim.',
     tags: ['React', 'TypeScript', 'C#', 'API REST'],
-    accent: '#E0B896',
+    accent: '#D4B483',
     links: [
       { label: 'Front-end', href: 'https://github.com/RaulGardini/To-do-list-Projetos-Frontend', icon: Github },
       { label: 'Back-end', href: 'https://github.com/RaulGardini/To-do-list-Projetos', icon: Github }
@@ -22,7 +22,7 @@ const projects = [
     description:
       'Chatbot com base de conhecimento configurável: o contexto é definido no back-end e o bot responde exclusivamente a partir dessa base de texto — ideal para onboarding e suporte interno.',
     tags: ['C#', 'ReactJS', 'Chatbot', 'API REST'],
-    accent: '#8FBDCC',
+    accent: '#C7C7CC',
     links: [
       { label: 'Front-end', href: 'https://github.com/RaulGardini/Professor-TI-Onboarding-Frontend', icon: Github },
       { label: 'Back-end', href: 'https://github.com/RaulGardini/Professor-TI-Onboarding', icon: Github }
@@ -34,7 +34,7 @@ const projects = [
     description:
       'Sistema para organizar e gerenciar os pedidos de fardamento de uma academia de dança, centralizando as solicitações de forma simples e organizada.',
     tags: ['ReactJS', 'JavaScript'],
-    accent: '#E0B896',
+    accent: '#D4B483',
     links: [
       { label: 'Repositório', href: 'https://github.com/RaulGardini/Sistema-uniformes', icon: Github }
     ]
@@ -45,7 +45,7 @@ const projects = [
     description:
       'Aplicativo de delivery voltado para a comunidade da Unifor, desenvolvido para Android. Conecta os usuários a pontos de alimentação de forma prática.',
     tags: ['Kotlin', 'Android Studio'],
-    accent: '#8FBDCC',
+    accent: '#C7C7CC',
     team: true,
     links: [
       { label: 'Repositório', href: 'https://github.com/RaulGardini/Unifood', icon: Github }
@@ -71,10 +71,10 @@ const ProjetosPage = () => {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h1 className="text-4xl md:text-6xl font-bold mb-4 text-[#F5EDE8]">
+            <h1 className="text-4xl md:text-6xl font-bold mb-4 text-[#FAFAF9]">
               Projetos
             </h1>
-            <p className="text-xl text-[#D4C4B8] max-w-2xl mx-auto">
+            <p className="text-xl text-[#A1A1AA] max-w-2xl mx-auto">
               Alguns dos trabalhos que desenvolvi, do front-end ao back-end
             </p>
           </motion.div>
@@ -90,7 +90,7 @@ const ProjetosPage = () => {
                   whileInView={{ y: 0, opacity: 1 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1, duration: 0.5 }}
-                  className="group flex flex-col bg-white/10 backdrop-blur-sm border border-white/15 rounded-2xl p-6 md:p-8 shadow-xl hover:border-white/30 hover:-translate-y-1 transition-all duration-300"
+                  className="group flex flex-col bg-white/[0.06] backdrop-blur-xl border border-white/10 rounded-2xl p-6 md:p-8 shadow-xl hover:border-white/30 hover:-translate-y-1 transition-all duration-300"
                 >
                   {/* Card Header */}
                   <div className="flex items-start justify-between mb-4">
@@ -101,7 +101,7 @@ const ProjetosPage = () => {
                       <Icon size={28} style={{ color: project.accent }} />
                     </div>
                     {project.team && (
-                      <span className="inline-flex items-center gap-1.5 text-xs font-medium text-[#D4C4B8] bg-white/10 border border-white/15 rounded-full px-3 py-1">
+                      <span className="inline-flex items-center gap-1.5 text-xs font-medium text-[#A1A1AA] bg-white/[0.06] border border-white/10 rounded-full px-3 py-1">
                         <Users size={13} />
                         Projeto em equipe
                       </span>
@@ -109,8 +109,8 @@ const ProjetosPage = () => {
                   </div>
 
                   {/* Title & Description */}
-                  <h2 className="text-2xl font-bold text-[#F5EDE8] mb-3">{project.title}</h2>
-                  <p className="text-[#D4C4B8] leading-relaxed text-sm md:text-base mb-5 flex-grow">
+                  <h2 className="text-2xl font-bold text-[#FAFAF9] mb-3">{project.title}</h2>
+                  <p className="text-[#A1A1AA] leading-relaxed text-sm md:text-base mb-5 flex-grow">
                     {project.description}
                   </p>
 
@@ -119,7 +119,7 @@ const ProjetosPage = () => {
                     {project.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="text-xs font-medium text-[#F5EDE8] bg-white/10 border border-white/15 rounded-md px-2.5 py-1"
+                        className="text-xs font-medium text-[#FAFAF9] bg-white/[0.06] border border-white/10 rounded-md px-2.5 py-1"
                       >
                         {tag}
                       </span>
@@ -136,7 +136,7 @@ const ProjetosPage = () => {
                           href={link.href}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-flex items-center gap-2 text-sm font-medium text-[#3D2B1F] bg-[#E0B896] hover:bg-[#C49A72] rounded-lg px-4 py-2 transition-colors duration-300"
+                          className="inline-flex items-center gap-2 text-sm font-medium text-[#0A0A0B] bg-[#D4B483] hover:bg-[#C2A05E] rounded-lg px-4 py-2 transition-colors duration-300"
                         >
                           <LinkIcon size={16} />
                           <span>{link.label}</span>
@@ -161,7 +161,7 @@ const ProjetosPage = () => {
               href="https://github.com/RaulGardini"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-[#D4C4B8] hover:text-[#E0B896] transition-colors duration-300 group"
+              className="inline-flex items-center gap-2 text-[#A1A1AA] hover:text-[#D4B483] transition-colors duration-300 group"
             >
               <Github size={20} />
               <span className="font-medium">Ver todos os repositórios no GitHub</span>

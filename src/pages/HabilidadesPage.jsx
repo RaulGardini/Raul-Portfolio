@@ -7,28 +7,28 @@ const categories = [
   {
     title: 'Front-end',
     icon: Code,
-    accent: '#E0B896',
+    accent: '#D4B483',
     description: 'Interfaces modernas, responsivas e interativas',
     skills: ['React', 'React Native', 'TypeScript', 'JavaScript', 'HTML', 'CSS', 'TailwindCSS']
   },
   {
     title: 'Back-end',
     icon: Server,
-    accent: '#8FBDCC',
+    accent: '#C7C7CC',
     description: 'APIs robustas, seguras e escaláveis',
     skills: ['C#', '.NET', 'APIs REST', 'Entity Framework', 'SQL', 'SQL Server']
   },
   {
     title: 'Ferramentas',
     icon: Wrench,
-    accent: '#E0B896',
+    accent: '#D4B483',
     description: 'Versionamento e fluxo de trabalho',
     skills: ['Git', 'GitHub']
   },
   {
     title: 'Aprendendo',
     icon: GraduationCap,
-    accent: '#8FBDCC',
+    accent: '#C7C7CC',
     description: 'Tecnologias que estou explorando',
     skills: ['Java', 'Kotlin']
   }
@@ -52,10 +52,10 @@ const HabilidadesPage = () => {
             transition={{ duration: 0.6 }}
             className="text-center mb-14"
           >
-            <h1 className="text-4xl md:text-6xl font-bold mb-4 text-[#F5EDE8]">
+            <h1 className="text-4xl md:text-6xl font-bold mb-4 text-[#FAFAF9]">
               Habilidades
             </h1>
-            <p className="text-xl text-[#D4C4B8] max-w-2xl mx-auto">
+            <p className="text-xl text-[#A1A1AA] max-w-2xl mx-auto">
               Tecnologias que uso para transformar ideias em produtos
             </p>
           </motion.div>
@@ -71,7 +71,7 @@ const HabilidadesPage = () => {
                   whileInView={{ y: 0, opacity: 1 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1, duration: 0.5 }}
-                  className="bg-white/10 backdrop-blur-sm border border-white/15 rounded-2xl p-6 md:p-8 shadow-xl hover:border-white/30 transition-all duration-300"
+                  className="bg-white/[0.06] backdrop-blur-xl border border-white/10 rounded-2xl p-6 md:p-8 shadow-xl hover:border-white/30 transition-all duration-300"
                 >
                   {/* Category Header */}
                   <div className="flex items-center gap-4 mb-5">
@@ -82,8 +82,8 @@ const HabilidadesPage = () => {
                       <Icon size={24} style={{ color: category.accent }} />
                     </div>
                     <div>
-                      <h2 className="text-xl font-bold text-[#F5EDE8]">{category.title}</h2>
-                      <p className="text-sm text-[#A89888]">{category.description}</p>
+                      <h2 className="text-xl font-bold text-[#FAFAF9]">{category.title}</h2>
+                      <p className="text-sm text-[#71717A]">{category.description}</p>
                     </div>
                   </div>
 
@@ -92,7 +92,7 @@ const HabilidadesPage = () => {
                     {category.skills.map((skill) => (
                       <span
                         key={skill}
-                        className="text-sm font-medium text-[#F5EDE8] bg-white/10 border border-white/15 rounded-lg px-3 py-1.5 hover:bg-white/15 transition-colors duration-300"
+                        className="text-sm font-medium text-[#FAFAF9] bg-white/[0.06] border border-white/10 rounded-lg px-3 py-1.5 hover:bg-white/15 transition-colors duration-300"
                       >
                         {skill}
                       </span>
