@@ -28,7 +28,7 @@ const projects = [
       'Chatbot com base de conhecimento configurável: o contexto é definido no back-end e o bot responde exclusivamente a partir dessa base de texto — ideal para onboarding e suporte interno.',
     tags: ['C#', 'ReactJS', 'Chatbot', 'API REST'],
     accent: '#C7C7CC',
-    media: null,
+    media: '/projects/professor-ti.mp4',
     liveUrl: null,
     links: [
       { label: 'Front-end', href: 'https://github.com/RaulGardini/Professor-TI-Onboarding-Frontend', icon: Github },
