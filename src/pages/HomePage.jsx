@@ -78,10 +78,12 @@ const HomePage = () => {
               transition={{ duration: 0.8, type: "spring" }}
               className="w-full md:w-auto flex justify-center"
             >
-              <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-[#D4B483]/30 shadow-[0_0_60px_rgba(212,180,131,0.25)] bg-gradient-to-br from-[#D4B483] via-[#C2A05E] to-[#0A0A0B] flex items-center justify-center">
-                <span className="text-7xl md:text-8xl font-bold text-[#FAFAF9] tracking-tight select-none drop-shadow-lg">
-                  RG
-                </span>
+              <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-[#D4B483]/30 shadow-[0_0_60px_rgba(212,180,131,0.25)] bg-[#0A0A0B]">
+                <img
+                  src="/foto-perfil.jpg"
+                  alt="Raul Passos Gardini"
+                  className="w-full h-full object-cover object-[center_100%]"
+                />
               </div>
             </motion.div>
 
