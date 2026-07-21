@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet';
-import { motion } from 'framer-motion';
-import { Github, ExternalLink, Users, CheckSquare, UtensilsCrossed, Shirt, Bot } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Github, ExternalLink, Users, CheckSquare, UtensilsCrossed, Cake, Bot, Maximize2, X } from 'lucide-react';
 
+// Para adicionar imagem/GIF: salve o arquivo em `public/projects/` e coloque o
+// caminho em `media` (ex: '/projects/projects.gif'). Suporta .gif/.png/.jpg e
+// .mp4/.webm (vídeo com autoplay em loop). `liveUrl` gera o botão "Ver ao vivo".
 const projects = [
   {
     title: 'Projects',
@@ -11,6 +14,8 @@ const projects = [
       'Aplicação de lista de tarefas voltada para o gerenciamento de projetos. Permite organizar atividades, acompanhar o andamento e manter tudo estruturado do começo ao fim.',
     tags: ['React', 'TypeScript', 'C#', 'API REST'],
     accent: '#D4B483',
+    media: '/projects/projects.mp4',
+    liveUrl: null,
     links: [
       { label: 'Front-end', href: 'https://github.com/RaulGardini/To-do-list-Projetos-Frontend', icon: Github },
       { label: 'Back-end', href: 'https://github.com/RaulGardini/To-do-list-Projetos', icon: Github }
@@ -23,20 +28,24 @@ const projects = [
       'Chatbot com base de conhecimento configurável: o contexto é definido no back-end e o bot responde exclusivamente a partir dessa base de texto — ideal para onboarding e suporte interno.',
     tags: ['C#', 'ReactJS', 'Chatbot', 'API REST'],
     accent: '#C7C7CC',
+    media: null,
+    liveUrl: null,
     links: [
       { label: 'Front-end', href: 'https://github.com/RaulGardini/Professor-TI-Onboarding-Frontend', icon: Github },
       { label: 'Back-end', href: 'https://github.com/RaulGardini/Professor-TI-Onboarding', icon: Github }
     ]
   },
   {
-    title: 'Sistema Uniformes',
-    icon: Shirt,
+    title: 'Bolos de Mainha',
+    icon: Cake,
     description:
-      'Sistema para organizar e gerenciar os pedidos de fardamento de uma academia de dança, centralizando as solicitações de forma simples e organizada.',
-    tags: ['ReactJS', 'JavaScript'],
+      'Landing page para a confeitaria Bolos de Mainha, apresentando o cardápio e os produtos da loja de forma atraente, moderna e responsiva.',
+    tags: ['React', 'Vite', 'TailwindCSS'],
     accent: '#D4B483',
+    media: '/projects/bolos-de-mainha.mp4',
+    liveUrl: null,
     links: [
-      { label: 'Repositório', href: 'https://github.com/RaulGardini/Sistema-uniformes', icon: Github }
+      { label: 'Repositório', href: 'https://github.com/RaulGardini/Bolos-de-Mainha', icon: Github }
     ]
   },
   {
@@ -47,13 +56,93 @@ const projects = [
     tags: ['Kotlin', 'Android Studio'],
     accent: '#C7C7CC',
     team: true,
+    media: null,
+    liveUrl: null,
     links: [
       { label: 'Repositório', href: 'https://github.com/RaulGardini/Unifood', icon: Github }
     ]
   }
 ];
 
+const isVideo = (src) => /\.(mp4|webm)$/i.test(src || '');
+
+const ProjectMedia = ({ src, title, onExpand }) => {
+  if (!src) return null;
+  return (
+    <div className="relative -mx-6 md:-mx-8 -mt-6 md:-mt-8 mb-6 overflow-hidden rounded-t-2xl border-b border-white/10 bg-black/30">
+      <div className="h-40 w-full">
+        {isVideo(src) ? (
+          <video src={src} className="w-full h-full object-cover" autoPlay muted loop playsInline />
+        ) : (
+          <img src={src} alt={`Prévia do projeto ${title}`} className="w-full h-full object-cover" loading="lazy" />
+        )}
+      </div>
+      <button
+        type="button"
+        onClick={onExpand}
+        aria-label="Ampliar prévia"
+        className="absolute top-2 right-2 w-9 h-9 rounded-lg bg-black/55 backdrop-blur-md border border-white/15 text-[#FAFAF9] flex items-center justify-center hover:bg-black/75 hover:border-[#D4B483]/60 transition-colors duration-300"
+      >
+        <Maximize2 size={16} />
+      </button>
+    </div>
+  );
+};
+
+const Lightbox = ({ media, onClose }) => {
+  useEffect(() => {
+    const onKey = (e) => {
+      if (e.key === 'Escape') onClose();
+    };
+    document.addEventListener('keydown', onKey);
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.removeEventListener('keydown', onKey);
+      document.body.style.overflow = '';
+    };
+  }, [onClose]);
+
+  return (
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.2 }}
+      onClick={onClose}
+      className="fixed inset-0 z-[60] flex items-center justify-center bg-black/85 backdrop-blur-sm p-4"
+    >
+      <motion.div
+        initial={{ scale: 0.94, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        exit={{ scale: 0.94, opacity: 0 }}
+        transition={{ duration: 0.2 }}
+        onClick={(e) => e.stopPropagation()}
+        className="relative w-full max-w-5xl"
+      >
+        <button
+          type="button"
+          onClick={onClose}
+          aria-label="Fechar"
+          className="absolute -top-3 -right-3 z-10 w-10 h-10 rounded-full bg-[#0A0A0B] border border-white/20 text-[#FAFAF9] flex items-center justify-center hover:border-[#D4B483]/60 transition-colors duration-300"
+        >
+          <X size={20} />
+        </button>
+        <div className="overflow-hidden rounded-xl border border-white/15 bg-black shadow-2xl">
+          {isVideo(media.src) ? (
+            <video src={media.src} className="w-full max-h-[80vh] object-contain bg-black" autoPlay loop controls playsInline />
+          ) : (
+            <img src={media.src} alt={media.title} className="w-full max-h-[80vh] object-contain bg-black" />
+          )}
+        </div>
+        <p className="text-center text-sm text-[#A1A1AA] mt-3">{media.title}</p>
+      </motion.div>
+    </motion.div>
+  );
+};
+
 const ProjetosPage = () => {
+  const [expanded, setExpanded] = useState(null);
+
   return (
     <>
       <Helmet>
@@ -92,6 +181,13 @@ const ProjetosPage = () => {
                   transition={{ delay: index * 0.1, duration: 0.5 }}
                   className="group flex flex-col bg-white/[0.06] backdrop-blur-xl border border-white/10 rounded-2xl p-6 md:p-8 shadow-xl hover:border-white/30 hover:-translate-y-1 transition-all duration-300"
                 >
+                  {/* Media (image / GIF / video) */}
+                  <ProjectMedia
+                    src={project.media}
+                    title={project.title}
+                    onExpand={() => setExpanded({ src: project.media, title: project.title })}
+                  />
+
                   {/* Card Header */}
                   <div className="flex items-start justify-between mb-4">
                     <div
@@ -126,8 +222,22 @@ const ProjetosPage = () => {
                     ))}
                   </div>
 
-                  {/* Links */}
+                  {/* Actions */}
                   <div className="flex flex-wrap gap-3 mt-auto">
+                    {/* Primary: live demo */}
+                    {project.liveUrl && (
+                      <a
+                        href={project.liveUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 text-sm font-semibold text-[#0A0A0B] bg-[#D4B483] hover:bg-[#C2A05E] rounded-lg px-4 py-2 transition-colors duration-300"
+                      >
+                        <ExternalLink size={16} />
+                        <span>Ver ao vivo</span>
+                      </a>
+                    )}
+
+                    {/* Secondary: repositories */}
                     {project.links.map((link) => {
                       const LinkIcon = link.icon;
                       return (
@@ -136,7 +246,7 @@ const ProjetosPage = () => {
                           href={link.href}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-flex items-center gap-2 text-sm font-medium text-[#0A0A0B] bg-[#D4B483] hover:bg-[#C2A05E] rounded-lg px-4 py-2 transition-colors duration-300"
+                          className="inline-flex items-center gap-2 text-sm font-medium text-[#FAFAF9] bg-white/[0.06] border border-white/10 hover:border-[#D4B483]/50 rounded-lg px-4 py-2 transition-colors duration-300"
                         >
                           <LinkIcon size={16} />
                           <span>{link.label}</span>
@@ -170,6 +280,11 @@ const ProjetosPage = () => {
           </motion.div>
         </div>
       </div>
+
+      {/* Lightbox / modal de vídeo ampliado */}
+      <AnimatePresence>
+        {expanded && <Lightbox media={expanded} onClose={() => setExpanded(null)} />}
+      </AnimatePresence>
     </>
   );
 };
