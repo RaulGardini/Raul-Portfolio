@@ -1,7 +1,7 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import { motion } from 'framer-motion';
-import { Code, Server, Wrench, GraduationCap } from 'lucide-react';
+import { Code, Server, Wrench, GraduationCap, Languages } from 'lucide-react';
 
 const categories = [
   {
@@ -102,6 +102,48 @@ const HabilidadesPage = () => {
               );
             })}
           </div>
+
+          {/* Idiomas */}
+          <motion.div
+            initial={{ y: 40, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="max-w-5xl mx-auto mt-6"
+          >
+            <div className="bg-white/[0.06] backdrop-blur-xl border border-white/10 rounded-2xl p-6 md:p-8 shadow-xl hover:border-white/30 transition-all duration-300">
+              {/* Header */}
+              <div className="flex items-center gap-4 mb-5">
+                <div
+                  className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0"
+                  style={{ backgroundColor: '#D4B48326', border: '1px solid #D4B4834D' }}
+                >
+                  <Languages size={24} style={{ color: '#D4B483' }} />
+                </div>
+                <div>
+                  <h2 className="text-xl font-bold text-[#FAFAF9]">Idiomas</h2>
+                  <p className="text-sm text-[#71717A]">Comunicação</p>
+                </div>
+              </div>
+
+              {/* Languages */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div className="bg-white/[0.04] border border-white/10 rounded-xl px-5 py-4">
+                  <div className="flex items-center justify-between">
+                    <span className="font-semibold text-[#FAFAF9]">Português</span>
+                    <span className="text-sm font-medium text-[#D4B483]">Nativo</span>
+                  </div>
+                </div>
+                <div className="bg-white/[0.04] border border-white/10 rounded-xl px-5 py-4">
+                  <div className="flex items-center justify-between">
+                    <span className="font-semibold text-[#FAFAF9]">Inglês</span>
+                    <span className="text-sm font-medium text-[#D4B483]">Básico</span>
+                  </div>
+                  <p className="text-xs text-[#71717A] mt-1">Leitura técnica de documentação e código</p>
+                </div>
+              </div>
+            </div>
+          </motion.div>
         </div>
       </div>
     </>
