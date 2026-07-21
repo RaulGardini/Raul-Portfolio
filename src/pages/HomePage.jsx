@@ -1,7 +1,7 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import { motion } from 'framer-motion';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Download } from 'lucide-react';
 
 const HomePage = () => {
   return (
@@ -51,6 +51,7 @@ const HomePage = () => {
                 initial={{ y: 50, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.8, duration: 0.6 }}
+                className="flex flex-wrap items-center justify-center md:justify-start gap-4"
               >
                 <button
                   onClick={() => document.getElementById('experiencias').scrollIntoView({ behavior: 'smooth' })}
@@ -59,6 +60,14 @@ const HomePage = () => {
                   <span>Ver Portfólio</span>
                   <ArrowRight size={20} />
                 </button>
+                <a
+                  href="/Curriculo-Raul-Passos-Gardini.pdf"
+                  download
+                  className="inline-flex items-center space-x-2 bg-white/[0.06] hover:bg-white/[0.12] border border-white/15 hover:border-[#D4B483]/60 text-[#FAFAF9] font-semibold px-8 py-4 rounded-lg transition-all duration-300 transform hover:scale-105"
+                >
+                  <Download size={20} />
+                  <span>Baixar CV</span>
+                </a>
               </motion.div>
             </div>
 
