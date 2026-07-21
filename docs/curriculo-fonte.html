@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<style>
+  @page { size: A4; margin: 0; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body {
+    font-family: "Segoe UI", -apple-system, Arial, sans-serif;
+    color: #23201c;
+    background: #ffffff;
+    font-size: 10.5pt;
+    line-height: 1.4;
+  }
+  .page {
+    width: 210mm;
+    padding: 14mm 16mm;
+  }
+
+  /* Header */
+  header { border-bottom: 2px solid #B0842E; padding-bottom: 10px; margin-bottom: 14px; }
+  h1 { font-size: 25pt; font-weight: 700; letter-spacing: -0.5px; color: #1a1815; }
+  .role { font-size: 12.5pt; font-weight: 600; color: #B0842E; margin-top: 2px; }
+  .contact { margin-top: 9px; font-size: 9pt; color: #55504a; line-height: 1.7; }
+  .contact a { color: #55504a; text-decoration: none; }
+  .contact span.sep { color: #c8c0b6; margin: 0 7px; }
+
+  /* Sections */
+  section { margin-bottom: 13px; }
+  h2 {
+    font-size: 10.5pt; font-weight: 700; text-transform: uppercase; letter-spacing: 1.2px;
+    color: #1a1815; padding-bottom: 3px; margin-bottom: 8px;
+    border-bottom: 1px solid #e3ddd3;
+  }
+  h2 .accent { color: #B0842E; }
+
+  p.summary { color: #3d3934; text-align: justify; }
+
+  /* Experience / Education entries */
+  .entry { margin-bottom: 9px; }
+  .entry:last-child { margin-bottom: 0; }
+  .entry-top { display: flex; justify-content: space-between; align-items: baseline; }
+  .entry-title { font-weight: 700; color: #1a1815; font-size: 11pt; }
+  .entry-org { font-weight: 600; color: #B0842E; font-size: 10pt; }
+  .entry-date { font-size: 9pt; color: #77706a; white-space: nowrap; }
+  ul { margin: 5px 0 0 16px; }
+  li { margin-bottom: 2.5px; color: #3d3934; }
+
+  /* Skills */
+  .skill-row { margin-bottom: 4px; }
+  .skill-label { display: inline-block; width: 92px; font-weight: 700; color: #1a1815; vertical-align: top; }
+  .skill-list { color: #3d3934; }
+
+  /* Projects */
+  .proj { margin-bottom: 7px; }
+  .proj-name { font-weight: 700; color: #1a1815; }
+  .proj-tech { color: #77706a; font-size: 9pt; }
+  .proj-desc { color: #3d3934; }
+  .proj-link { color: #B0842E; font-size: 9pt; text-decoration: none; }
+
+  /* Languages / two column */
+  .cols { display: flex; gap: 40px; }
+  .cols > div { flex: 1; }
+  .lang-item { margin-bottom: 3px; }
+  .lang-name { font-weight: 700; color: #1a1815; }
+  .lang-level { color: #3d3934; }
+  .lang-note { color: #77706a; font-size: 8.5pt; }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header>
+    <h1>Raul Passos Gardini</h1>
+    <div class="role">Desenvolvedor Full Stack</div>
+    <div class="contact">
+      Fortaleza, CE <span class="sep">|</span>
+      (85) 98726-1526 <span class="sep">|</span>
+      rap.gardini@gmail.com<br>
+      <a href="https://raul-portfolio-seven.vercel.app">raul-portfolio-seven.vercel.app</a> <span class="sep">|</span>
+      <a href="https://github.com/RaulGardini">github.com/RaulGardini</a> <span class="sep">|</span>
+      <a href="https://www.linkedin.com/in/raul-gardini-2595712b1/">linkedin.com/in/raul-gardini</a>
+    </div>
+  </header>
+
+  <section>
+    <h2><span class="accent">|</span> Resumo</h2>
+    <p class="summary">
+      Desenvolvedor Full Stack atuando no setor financeiro, com foco em APIs RESTful em C#/.NET e interfaces web
+      em React e TypeScript. Experiência no desenvolvimento e manutenção de sistemas internos de ponta a ponta,
+      incluindo a implementação de um sistema worker para processamento de tarefas em segundo plano. Estudante de
+      Ciência da Computação, atualmente aprofundando conhecimentos em automação de processos e agentes de IA.
+    </p>
+  </section>
+
+  <section>
+    <h2><span class="accent">|</span> Experiência Profissional</h2>
+    <div class="entry">
+      <div class="entry-top">
+        <span><span class="entry-title">Desenvolvedor Full Stack</span> — <span class="entry-org">BitCodeHouse (Freelance)</span></span>
+        <span class="entry-date">Fev 2025 – Atual</span>
+      </div>
+      <ul>
+        <li>Desenvolvimento e manutenção de APIs RESTful em C#/.NET para sistemas do setor financeiro.</li>
+        <li>Criação de interfaces web responsivas e interativas em React e TypeScript.</li>
+        <li>Implementação de um sistema worker para processamento de tarefas em segundo plano.</li>
+        <li>Atuação full stack de ponta a ponta, integrando regras de negócio, banco de dados (SQL Server) e front-end.</li>
+        <li>Desenvolvimento de rotinas de automação de processos e exploração de agentes de IA.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="accent">|</span> Formação Acadêmica</h2>
+    <div class="entry">
+      <div class="entry-top">
+        <span><span class="entry-title">Bacharelado em Ciência da Computação</span> — <span class="entry-org">Universidade de Fortaleza (Unifor)</span></span>
+        <span class="entry-date">Conclusão prevista: 2028</span>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="accent">|</span> Projetos em Destaque</h2>
+    <div class="proj">
+      <span class="proj-name">Bolos de Mainha</span> <span class="proj-tech">— React, Vite, TailwindCSS</span><br>
+      <span class="proj-desc">Landing page responsiva para confeitaria, com apresentação de cardápio e produtos.</span>
+      <a class="proj-link" href="https://bolosdemainha.com">bolosdemainha.com</a>
+    </div>
+    <div class="proj">
+      <span class="proj-name">Projects</span> <span class="proj-tech">— React, TypeScript, C#, API REST</span><br>
+      <span class="proj-desc">Aplicação full stack para gerenciamento de tarefas e projetos, com autenticação JWT.</span>
+      <a class="proj-link" href="https://github.com/RaulGardini/To-do-list-Projetos">github.com/RaulGardini</a>
+    </div>
+    <div class="proj">
+      <span class="proj-name">ProfessorTI Onboarding</span> <span class="proj-tech">— C#, React</span><br>
+      <span class="proj-desc">Chatbot com base de conhecimento configurável no back-end, voltado a onboarding e suporte interno.</span>
+      <a class="proj-link" href="https://github.com/RaulGardini/Professor-TI-Onboarding">github.com/RaulGardini</a>
+    </div>
+    <div class="proj">
+      <span class="proj-name">Unifood</span> <span class="proj-tech">— Kotlin, Android (projeto em equipe)</span><br>
+      <span class="proj-desc">Aplicativo de delivery para a comunidade da Unifor, desenvolvido para Android.</span>
+      <a class="proj-link" href="https://github.com/RaulGardini/Unifood">github.com/RaulGardini</a>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="accent">|</span> Habilidades Técnicas</h2>
+    <div class="skill-row"><span class="skill-label">Front-end</span><span class="skill-list">React, React Native, TypeScript, JavaScript, HTML, CSS, TailwindCSS</span></div>
+    <div class="skill-row"><span class="skill-label">Back-end</span><span class="skill-list">C#, .NET, Entity Framework, APIs REST, SQL, SQL Server</span></div>
+    <div class="skill-row"><span class="skill-label">Ferramentas</span><span class="skill-list">Git, GitHub</span></div>
+    <div class="skill-row"><span class="skill-label">Aprendendo</span><span class="skill-list">Java, Kotlin</span></div>
+  </section>
+
+  <section>
+    <h2><span class="accent">|</span> Idiomas</h2>
+    <div class="cols">
+      <div class="lang-item"><span class="lang-name">Português</span> — <span class="lang-level">Nativo</span></div>
+      <div class="lang-item">
+        <span class="lang-name">Inglês</span> — <span class="lang-level">Básico</span>
+        <span class="lang-note">(leitura técnica de documentação e código)</span>
+      </div>
+    </div>
+  </section>
+
+</div>
+</body>
+</html>
