@@ -43,7 +43,7 @@ const projects = [
     tags: ['React', 'Vite', 'TailwindCSS'],
     accent: '#D4B483',
     media: '/projects/bolos-de-mainha.mp4',
-    liveUrl: null,
+    liveUrl: 'https://bolosdemainha.com',
     links: [
       { label: 'Repositório', href: 'https://github.com/RaulGardini/Bolos-de-Mainha', icon: Github }
     ]
@@ -56,7 +56,8 @@ const projects = [
     tags: ['Kotlin', 'Android Studio'],
     accent: '#C7C7CC',
     team: true,
-    media: null,
+    media: '/projects/unifood.mp4',
+    portrait: true,
     liveUrl: null,
     links: [
       { label: 'Repositório', href: 'https://github.com/RaulGardini/Unifood', icon: Github }
@@ -66,13 +67,30 @@ const projects = [
 
 const isVideo = (src) => /\.(mp4|webm)$/i.test(src || '');
 
-const ProjectMedia = ({ src, title, onExpand }) => {
+const ProjectMedia = ({ src, title, portrait, onExpand }) => {
   if (!src) return null;
   return (
     <div className="relative -mx-6 md:-mx-8 -mt-6 md:-mt-8 mb-6 overflow-hidden rounded-t-2xl border-b border-white/10 bg-black/30">
-      <div className="h-40 w-full">
+      <div className={`${portrait ? 'h-60' : 'h-40'} w-full relative flex items-center justify-center overflow-hidden`}>
         {isVideo(src) ? (
-          <video src={src} className="w-full h-full object-cover" autoPlay muted loop playsInline />
+          portrait ? (
+            <>
+              {/* Fundo desfocado preenchendo as laterais do vídeo vertical */}
+              <video
+                src={src}
+                className="absolute inset-0 w-full h-full object-cover scale-125 blur-2xl opacity-40"
+                autoPlay
+                muted
+                loop
+                playsInline
+                aria-hidden="true"
+              />
+              {/* Vídeo vertical centralizado */}
+              <video src={src} className="relative h-full w-auto max-w-full object-contain" autoPlay muted loop playsInline />
+            </>
+          ) : (
+            <video src={src} className="w-full h-full object-cover" autoPlay muted loop playsInline />
+          )
         ) : (
           <img src={src} alt={`Prévia do projeto ${title}`} className="w-full h-full object-cover" loading="lazy" />
         )}
@@ -185,6 +203,7 @@ const ProjetosPage = () => {
                   <ProjectMedia
                     src={project.media}
                     title={project.title}
+                    portrait={project.portrait}
                     onExpand={() => setExpanded({ src: project.media, title: project.title })}
                   />
 
